@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Dúvidas Frequentes - OrganiC FooD</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --red: #58c519;
+            --white: #fff;
+            --dark: #1e1c2a;
+        }
+
+        body {
+            color: var(--dark);
+            background: var(--white);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 0.1rem 0.5rem #ccc;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 40px;
+            transition: all 0.5s;
+        }
+
+        .navigation .logo {
+            color: var(--red);
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .navigation ul {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .navigation ul li a {
+            color: var(--dark);
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.5s;
+        }
+
+        .navigation ul li a:hover {
+            color: var(--red);
+        }
+
+        .menu {
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu .bar {
+            display: block;
+            width: 28px;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--dark);
+            margin: 5px auto;
+            transition: all 0.3s;
+        }
+
+        .menu .bar:nth-child(1),
+        .menu .bar:nth-child(3) {
+            background: var(--red);
+        }
+
+        main {
+            padding-top: 80px; /* Espaço para o cabeçalho fixo */
+        }
+
+        .faq {
+            padding: 60px 5%;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .faq h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        .faq-item {
+            background: var(--red);
+            color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 785px) {
+            .navigation {
+                padding: 18px 20px;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .menu.ativo .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu.ativo .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu.ativo .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .navigation ul {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                background: var(--white);
+                gap: -10px;
+                transition: 0.3s;
+            }
+
+            .navigation ul.ativo {
+                right: 0;
+            }
+
+            .nav-item {
+                margin: 16px 0;
+            }
+
+            .faq {
+                padding: 100px 2%;
+                text-align: center;
+                overflow: hidden;
+                gap: 5rem;
+            }
+
+            .faq h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            .faq-item {
+                width: 100%;
+                padding: 15px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html" class="logo">
+                  <a href="index.html" class="logo"><span>A</span>gr<span>i</span>cult<span>u</span>ra <span>In</span>tensiva</a>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">PÁGINA INICIAL</a></li>
+                <li class="nav-item"><a href="sobre.html">IMPACTOS AMBIENTAIS</a></li>
+                <li class="nav-item"><a href="duvidas.html">CONSEQUÊNCIAS</a></li>
+            </ul>
+            <div class="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="faq">
+            <h1>Consequências da Agricultura Intensiva</h1>
+            <div class="faq-item">
+                <p>A agricultura intensiva também faz uso de grandes volumes de água para garantir que as plantas tenham o suprimento necessário para crescer rapidamente. Em regiões onde a disponibilidade de água é limitada, a irrigação em larga escala pode levar ao esgotamento dos recursos hídricos e à salinização do solo. Isso pode gerar um ciclo de degradação, em que a produtividade da terra diminui ao longo do tempo, enquanto a demanda por água aumenta.</p>
+            </div>
+            <div class="faq-item">
+                <p>Outro grande impacto da agricultura intensiva é a contaminação dos recursos hídricos. O uso intensivo de pesticidas e fertilizantes resulta em grandes quantidades de resíduos químicos que podem ser levados pelas chuvas para os rios, lagos e lençóis freáticos. Esse fenômeno, conhecido como lixiviação, compromete a qualidade da água, tornando-a imprópria para consumo humano e prejudicando a vida aquática.</p>
+            </div>
+            <div class="faq-item">
+                <p>Além disso, a irrigação em larga escala pode agravar o problema da escassez de água em regiões que já enfrentam restrições hídricas. A retirada excessiva de água dos rios e aquíferos pode reduzir os níveis de água doce disponíveis para outras atividades, como o abastecimento das populações e a preservação dos ecossistemas aquáticos.</p>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

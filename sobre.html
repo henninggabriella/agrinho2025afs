@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <title>Sobre - OrganiC FooD</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --red: #58c519;
+            --white: #fff;
+            --dark: #1e1c2a;
+        }
+
+        body {
+            color: var(--dark);
+            background: var(--white);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: var(--white);
+            box-shadow: 0 0.1rem 0.5rem #ccc;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 40px;
+            transition: all 0.5s;
+        }
+
+        .navigation .logo {
+            color: var(--red);
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .navigation ul {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .navigation ul li a {
+            color: var(--dark);
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.5s;
+        }
+
+        .navigation ul li a:hover {
+            color: var(--red);
+        }
+
+        .menu {
+            cursor: pointer;
+            display: none;
+        }
+
+        .menu .bar {
+            display: block;
+            width: 28px;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--dark);
+            margin: 5px auto;
+            transition: all 0.3s;
+        }
+
+        .menu .bar:nth-child(1),
+        .menu .bar:nth-child(3) {
+            background: var(--red);
+        }
+
+        main {
+            padding-top: 80px; /* Espaço para o cabeçalho fixo */
+        }
+
+        .faq {
+            padding: 60px 5%;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .faq h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--red);
+            color: var(--white);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .faq-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-direction: row; /* Imagens lado a lado */
+            flex-wrap: wrap; /* Permite quebra de linha */
+            align-items: center;
+            justify-content: center; /* Centraliza as imagens horizontalmente */
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .image-gallery h2 {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            text-align: center; /* Centraliza o título */
+        }
+
+        .image-gallery .image-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .image-gallery img {
+            width: 200px; /* Ajuste o tamanho conforme necessário */
+            height: 200px; /* Ajuste o tamanho conforme necessário */
+            object-fit: cover;
+            border-radius: 10px; /* Borda arredondada das imagens */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombreamento quadrado */
+        }
+
+        .image-gallery .image-label {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        @media (max-width: 785px) {
+            .navigation {
+                padding: 18px 20px;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .menu.ativo .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu.ativo .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu.ativo .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .navigation ul {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                width: 100%;
+                height: 100%;
+                flex-direction: column;
+                background: var(--white);
+                gap: -10px;
+                transition: 0.3s;
+            }
+
+            .navigation ul.ativo {
+                right: 0;
+            }
+
+            .nav-item {
+                margin: 16px 0;
+            }
+
+            .faq {
+                padding: 100px 2%;
+            }
+
+            .faq h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            .faq-item {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .image-gallery img {
+                width: 150px; /* Ajuste para telas menores */
+                height: 150px; /* Ajuste para telas menores */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="index.html" class="logo">
+                  <a href="index.html" class="logo"><span>A</span>gr<span>i</span>cult<span>u</span>ra <span>In</span>tensiva</a>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html">PÁGINA INICIAL</a></li>
+                <li class="nav-item"><a href="sobre.html">IMPACTOS AMBIENTAIS</a></li>
+                <li class="nav-item"><a href="duvidas.html">CONSEQUÊNCIAS</a></li>
+            </ul>
+            <div class="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="faq">
+            <h1>Impactos Ambientais da Agricultura Intensiva</h1>
+            <div class="faq-item">
+                <h2>DESMATAMENTO</h2>
+                <p>O desmatamento é a mais alarmante das características da agricultura intensiva brasileira visto que leva à degradação do solo e causa expansão a novas terras. Em particular, as florestas são cortadas em prol de novas áreas férteis e produtivas. O tamanho do problema fica claro com números ilustrativos. Assim, a agricultura intensiva moderna é culpada por um 80% do desmatamento global.</p>
+            </div>
+            <div class="faq-item">
+                <h2>RESISTÊNCIA</h2>
+                <p>Resistência de pragas e ervas daninhas a produtos químicos. O uso regular de pesticidas e herbicidas sintetizados na agricultura intensiva induz a adaptação. Grandes e frequentes aplicações tornam-se menos eficazes ou ineficazes. Como resultado, os parasitas se tornam mais fortes e se estabelecem em números multiplicados além de todo controle razoável.</p>
+            </div>
+             <div class="faq-item">
+                <h2>DEGRADAÇÃO</h2>
+                <p>Degradação do solo. “Espremer” os campos tanto quanto possível causa o esgotamento do solo e a erosão. Portanto, as práticas de agricultura intensiva agressivas tornam as terras mais fracas, pois interferem significativamente nos processos naturais do solo. Em particular, os pesticidas químicos destroem os microrganismos no solo que garantem a compostagem e a incorporação adequada de matéria orgânica.</p>
+            </div>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="a-irrigacao-uso-excessivo-minerais-retirada-vegetacao-original-podem-causar-erosoes-no-solo-57d82118976b1.webp" alt="Imagem 1">
+                </div>
+                <div class="image-item">
+                    <img src="erosao_solo_agricultura.webp" alt="Imagem 2">
+                </div>
+                <div class="image-item">
+                    <img src="WhatsApp-Image-2022-09-05-at-13_46_53.jpeg"alt="Imagem 3">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
